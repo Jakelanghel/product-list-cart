@@ -45,7 +45,8 @@ import imageWaffleMobile from "../assets/image-waffle-mobile.jpg";
 import imageWaffleTablet from "../assets/image-waffle-tablet.jpg";
 import imageWaffleThumbnail from "../assets/image-waffle-thumbnail.jpg";
 
-export const images = {
+// Exporting all images as an object
+export const imgObj = {
   iconAddToCart,
   iconCarbonNeutral,
   iconDecrementQuantity,

@@ -1,11 +1,11 @@
 import { GlobalStyles } from "./shared/Global";
-import { images } from "./constant/images";
+import Menu from "./components/Menu";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      Jakeasdasdfsdf
+      <Menu />
     </>
   );
 }
