@@ -1,7 +1,26 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-    width: 100;
+
+
+@font-face {
+  font-family: 'redhat'; 
+  src: url('./assets/fonts/RedHatText-VariableFont_wght') format('ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'redhat-400'; 
+  src: url('./assets/fonts/RedHatText-VariableFont_wght') format('ttf');
+  font-weight: 600;
+  
+}
+@font-face {
+  font-family: 'redhat-600'; 
+  src: url('./assets/fonts/RedHatText-VariableFont_wght') format('ttf');
+  font-weight: 700;
+}
+
+
 
     :root {
         --red: hsl(14, 86%, 42%);
@@ -19,5 +38,15 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+
+    img {
+        display: block;
+    }
+
+    body {
+        background-color: rgba(252, 248, 245, 1);
+        font-family: "red-hat", sans-serif;
+    }
+
 
 `;

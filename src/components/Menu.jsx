@@ -1,9 +1,9 @@
 import data from "../data/data.json";
 import Item from "./item/Item";
 import useScreenSize from "../hooks/useScreenSize";
+import { StyledMenu } from "./menu/Menu.Styled";
 
 const Menu = () => {
-  console.log(data);
   const screenSize = useScreenSize();
 
   const MenuItems = data.map((item, i) => (
@@ -17,7 +17,12 @@ const Menu = () => {
     />
   ));
 
-  return <div>{MenuItems}</div>;
+  return (
+    <StyledMenu>
+      <h1>Desserts</h1>
+      {MenuItems}
+    </StyledMenu>
+  );
 };
 
 export default Menu;
