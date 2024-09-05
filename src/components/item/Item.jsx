@@ -8,7 +8,7 @@ const Item = (props) => {
     props;
 
   const formatToDollar = (amount) => amount.toFixed(2);
-  const quantity = cartState[name] ? cartState[name] : 0;
+  const quantity = cartState[name] ? cartState[name].quantity : 0;
 
   const menuItemImg =
     screenSize === "mobile"
@@ -19,7 +19,7 @@ const Item = (props) => {
 
   const setActive = () => {
     setCartState((oldState) => {
-      return { ...oldState, [name]: 1 };
+      return { ...oldState, [name]: { name: name, price: price, quantity: 1 } };
     });
   };
 

@@ -5,7 +5,8 @@ import Cart from "./components/cart/Cart";
 
 function App() {
   const [cartState, setCartState] = useState({});
-  const RenderCart = Object.keys(cartState).length == 0 ? null : <Cart />;
+  const RenderCart =
+    Object.keys(cartState).length == 0 ? null : <Cart cartState={cartState} />;
   return (
     <>
       <GlobalStyles />

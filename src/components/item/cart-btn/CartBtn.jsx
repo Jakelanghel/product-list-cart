@@ -7,7 +7,13 @@ const CartBtn = (props) => {
     setCartState((oldState) => {
       for (const item in oldState) {
         if (item == name) {
-          return { ...oldState, [name]: oldState[name] + 1 };
+          return {
+            ...oldState,
+            [name]: {
+              ...oldState[name],
+              quantity: oldState[name].quantity + 1,
+            },
+          };
         }
       }
     });
@@ -16,7 +22,13 @@ const CartBtn = (props) => {
     setCartState((oldState) => {
       for (const item in oldState) {
         if (item == name) {
-          return { ...oldState, [name]: oldState[name] - 1 };
+          return {
+            ...oldState,
+            [name]: {
+              ...oldState[name],
+              quantity: oldState[name].quantity - 1,
+            },
+          };
         }
       }
     });
@@ -36,7 +48,7 @@ const CartBtn = (props) => {
             alt="Decrease item quantity"
           />
         </button>
-        <p className="quantity">{cartState[name]}</p>
+        <p className="quantity">{cartState[name].quantity}</p>
         <button className="active-btns" onClick={increaseQuantity}>
           <img
             src={imgObj.iconIncrementQuantity}
