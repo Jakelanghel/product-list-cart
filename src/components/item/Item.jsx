@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 import { imgObj } from "../../constant/images";
 import { StyledItem } from "./Item.Styled";
+import CartBtn from "./cart-btn/CartBtn";
 
 const Item = (props) => {
   const { name, images, category, price, screenSize, cartState, setCartState } =
     props;
-  const formatToDollar = (amount) => amount.toFixed(2);
-  const itemsArray = Object.keys(cartState);
 
+  const formatToDollar = (amount) => amount.toFixed(2);
   const quantity = cartState[name] ? cartState[name] : 0;
 
   const menuItemImg =
@@ -22,56 +22,23 @@ const Item = (props) => {
       return { ...oldState, [name]: 1 };
     });
   };
-  const increaseQuantity = () => {
-    setCartState((oldState) => {
-      for (const item in oldState) {
-        if (item == name) {
-          return { ...oldState, [name]: oldState[name] + 1 };
-        }
-      }
-    });
-  };
-  const decreaseQuantity = () => {
-    setCartState((oldState) => {
-      for (const item in oldState) {
-        if (item == name) {
-          return { ...oldState, [name]: oldState[name] - 1 };
-        }
-      }
-    });
-  };
-
-  // console.log(cartState);
-
-  const cartBtn =
-    quantity === 0 ? (
-      <button className="cart-btn" onClick={setActive}>
-        <img src={imgObj.iconAddToCart} alt="" />
-        Add to Cart
-      </button>
-    ) : (
-      <div className="cart-btn-active">
-        <button className="active-btns" onClick={decreaseQuantity}>
-          <img
-            src={imgObj.iconDecrementQuantity}
-            alt="Decrease item quantity"
-          />
-        </button>
-        <p className="quantity">{cartState[name]}</p>
-        <button className="active-btns" onClick={increaseQuantity}>
-          <img
-            src={imgObj.iconIncrementQuantity}
-            alt="Increase item quantity"
-          />
-        </button>
-      </div>
-    );
 
   return (
     <StyledItem>
       <div className="container-img">
-        <img src={imgObj[menuItemImg]} className="menu-img" alt="Menu Item" />
-        {cartBtn}
+        <img
+          src={imgObj[menuItemImg]}
+          className={quantity > 0 ? "menu-img active" : "menu-img"}
+          alt="Menu Item"
+        />
+        <CartBtn
+          setActive={setActive}
+          setCartState={setCartState}
+          cartState={cartState}
+          imgObj={imgObj}
+          name={name}
+          quantity={quantity}
+        />
       </div>
 
       <div className="container-txt">

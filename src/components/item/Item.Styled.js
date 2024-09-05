@@ -14,6 +14,11 @@ export const StyledItem = styled.main`
     display: block; /* Removes any extra space below the image */
     border-radius: 10px;
     margin: 2rem 0;
+    border: solid 3px transparent;
+  }
+
+  .active {
+    border: solid 3px var(--red);
   }
 
   .category {

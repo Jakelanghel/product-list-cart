@@ -5,12 +5,12 @@ import Cart from "./components/cart/Cart";
 
 function App() {
   const [cartState, setCartState] = useState({});
-
+  const RenderCart = Object.keys(cartState).length == 0 ? null : <Cart />;
   return (
     <>
       <GlobalStyles />
       <Menu cartState={cartState} setCartState={setCartState} />
-      <Cart />
+      {RenderCart}
     </>
   );
 }
