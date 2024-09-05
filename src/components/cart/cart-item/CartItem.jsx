@@ -7,16 +7,14 @@ const CartItem = (props) => {
   const total = price * quantity;
   return (
     <StyledCartItem>
+      <p className="name">{name}</p>
       <div>
-        <p>{name}</p>
-        <div>
-          <p>
-            {quantity}x @<span>{price}</span> <span>{total}</span>
-          </p>
-          <button>
-            <img src={imgObj.iconRemoveItem} alt="Remove item" />
-          </button>
-        </div>
+        <p>
+          {quantity}x @<span>{price}</span> <span>{total}</span>
+        </p>
+        <button>
+          <img src={imgObj.iconRemoveItem} alt="Remove item" />
+        </button>
       </div>
     </StyledCartItem>
   );

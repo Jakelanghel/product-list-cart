@@ -16,7 +16,12 @@ const Cart = (props) => {
     );
   });
 
-  return <div>{RenderCartItems}</div>;
+  return (
+    <div>
+      <h2>Your Cart ({cartKeys.length})</h2>
+      {RenderCartItems}
+    </div>
+  );
 };
 
 Cart.propTypes = {

@@ -9,4 +9,9 @@ export const StyledCartItem = styled.main`
   h1 {
     padding-top: 2rem;
   }
+
+  .name {
+    font-size: 1rem;
+    font-weight: 400;
+  }
 `;
