@@ -8,7 +8,7 @@ const CartItem = (props) => {
   return (
     <StyledCartItem>
       <p className="name">{name}</p>
-      <div>
+      <div className="details">
         <p>
           {quantity}x @<span>{price}</span> <span>{total}</span>
         </p>

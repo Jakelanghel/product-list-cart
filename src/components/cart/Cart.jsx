@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import CartItem from "./cart-item/CartItem";
+import { StyledCart } from "./cart-item/Cart.Styled";
 
 const Cart = (props) => {
   const { cartState } = props;
@@ -17,10 +18,12 @@ const Cart = (props) => {
   });
 
   return (
-    <div>
-      <h2>Your Cart ({cartKeys.length})</h2>
+    <StyledCart>
+      <h2>
+        Your Cart <span>({cartKeys.length})</span>
+      </h2>
       {RenderCartItems}
-    </div>
+    </StyledCart>
   );
 };
 

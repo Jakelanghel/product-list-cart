@@ -5,20 +5,10 @@ export const GlobalStyles = createGlobalStyle`
 
 @font-face {
   font-family: 'redhat'; 
-  src: url('./assets/fonts/RedHatText-VariableFont_wght') format('ttf');
-  font-weight: 400;
+  src: url('./assets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
 }
-@font-face {
-  font-family: 'redhat-400'; 
-  src: url('./assets/fonts/RedHatText-VariableFont_wght') format('ttf');
-  font-weight: 600;
-  
-}
-@font-face {
-  font-family: 'redhat-600'; 
-  src: url('./assets/fonts/RedHatText-VariableFont_wght') format('ttf');
-  font-weight: 700;
-}
+
 
 
 
