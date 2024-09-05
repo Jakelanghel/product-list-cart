@@ -34,21 +34,53 @@ export const StyledItem = styled.main`
     color: var(--red);
   }
 
-  .cart-btn {
+  .cart-btn,
+  .cart-btn-active {
     width: 60%;
     position: absolute;
     bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 7px;
-    font-size: 1rem;
-    font-weight: 900;
-    background-color: var(--rose-50);
-    border: solid 1px black;
     border-radius: 250px;
-    justify-content: center;
     align-items: center;
     padding: 0.65rem 0;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+
+  .cart-btn {
+    gap: 7px;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: var(--rose-50);
+    border: solid 1px black;
+    justify-content: center;
+  }
+
+  .cart-btn-active {
+    background-color: var(--red);
+    color: white;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .active-btns {
+    color: white;
+    background-color: transparent;
+    border: solid 1px white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+  }
+
+  .quantity {
+    font-size: 1rem;
+    font-weight: 400;
   }
 `;

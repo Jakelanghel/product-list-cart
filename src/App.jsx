@@ -4,12 +4,12 @@ import { useState } from "react";
 import Cart from "./components/cart/Cart";
 
 function App() {
-  const [cartState, setCartState] = useState([]);
+  const [cartState, setCartState] = useState({});
 
   return (
     <>
       <GlobalStyles />
-      <Menu />
+      <Menu cartState={cartState} setCartState={setCartState} />
       <Cart />
     </>
   );
