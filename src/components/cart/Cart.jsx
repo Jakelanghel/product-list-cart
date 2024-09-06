@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import CartItem from "./cart-item/CartItem";
 import { StyledCart } from "./Cart.Styled";
-import EmptyCart from "./EmptyCart";
+import { imgObj } from "../../constant/images";
 
 const Cart = (props) => {
   const { cartState } = props;
@@ -20,7 +20,16 @@ const Cart = (props) => {
         );
       })
     ) : (
-      <EmptyCart />
+      <>
+        <div className="container-empty-img">
+          <img
+            src={imgObj.illustrationEmptyCart}
+            alt="Cart is empty"
+            className="empty-img"
+          />
+        </div>
+        <p className="empty-cart-txt">Your added items will appear here</p>
+      </>
     );
 
   return (

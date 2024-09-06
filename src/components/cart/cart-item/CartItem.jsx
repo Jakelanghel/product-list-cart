@@ -9,11 +9,16 @@ const CartItem = (props) => {
     <StyledCartItem>
       <p className="name">{name}</p>
       <div className="details">
-        <p>
-          {quantity}x @<span>{price}</span> <span>{total}</span>
+        <p className="price">
+          <span className="quantity">{quantity}x</span> @ ${price.toFixed(2)}
+          <span className="total">${total.toFixed(2)}</span>
         </p>
-        <button>
-          <img src={imgObj.iconRemoveItem} alt="Remove item" />
+        <button className="remove-item">
+          <img
+            src={imgObj.iconRemoveItem}
+            alt="Remove item"
+            className="remove-img"
+          />
         </button>
       </div>
     </StyledCartItem>
