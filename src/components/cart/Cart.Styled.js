@@ -8,8 +8,10 @@ export const StyledCart = styled.div`
   padding: 2rem;
 
   border-radius: 15px;
+
   h2 {
     color: var(--red);
+    padding-bottom: 0.5rem;
   }
 
   .container-empty-img {
