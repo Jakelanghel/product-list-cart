@@ -9,7 +9,6 @@ const RenderCart = (props) => {
     const total = Object.values(cartState).reduce((total, item) => {
       return total + item.price * item.quantity;
     }, 0);
-    console.log(Object.values(cartState));
 
     const cartItems = cartKeys.map((key, i) => {
       return (
@@ -27,12 +26,13 @@ const RenderCart = (props) => {
       <div>
         {cartItems}
         <p>
-          Order Total <span>{total}</span>
+          Order Total <span>${total.toFixed(2)}</span>
         </p>
         <div className="container-carbon-msg">
           <img src={imgObj.iconCarbonNeutral} alt="" />
           <p>This is a carbon-neutral delivery</p>
         </div>
+        <button>Confirm Order</button>
       </div>
     );
   } else {
