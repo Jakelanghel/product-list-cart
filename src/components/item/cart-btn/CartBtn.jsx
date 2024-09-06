@@ -20,16 +20,22 @@ const CartBtn = (props) => {
   };
   const decreaseQuantity = () => {
     setCartState((oldState) => {
-      for (const item in oldState) {
-        if (item == name) {
-          return {
-            ...oldState,
-            [name]: {
-              ...oldState[name],
-              quantity: oldState[name].quantity - 1,
-            },
-          };
-        }
+      let newCartState = { ...oldState };
+      const arr = Object.keys(newCartState);
+      const itemToUpdate = arr.filter((item) => item === name);
+
+      if (newCartState[itemToUpdate[0]].quantity > 1) {
+        newCartState = {
+          ...newCartState,
+          [name]: {
+            ...newCartState[name],
+            quantity: newCartState[name].quantity - 1,
+          },
+        };
+        return newCartState;
+      } else {
+        delete newCartState[name];
+        return newCartState;
       }
     });
   };

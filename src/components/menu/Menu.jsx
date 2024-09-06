@@ -1,7 +1,7 @@
-import data from "../data/data.json";
-import Item from "./item/Item";
-import useScreenSize from "../hooks/useScreenSize";
-import { StyledMenu } from "./menu/Menu.Styled";
+import data from "./data/data.json";
+import Item from "../../components/item/Item";
+import useScreenSize from "../../hooks/useScreenSize";
+import { StyledMenu } from "./Menu.Styled";
 import PropTypes from "prop-types";
 
 const Menu = (props) => {
