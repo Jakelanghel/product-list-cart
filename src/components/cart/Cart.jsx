@@ -7,7 +7,6 @@ import RenderCart from "./render-cart/RenderCart";
 const Cart = (props) => {
   const { cartState, setCartState } = props;
   const cartKeys = Object.keys(cartState);
-  console.log(cartKeys.length);
 
   const removeItem = (name) => {
     setCartState((oldState) => {
@@ -16,33 +15,6 @@ const Cart = (props) => {
       return newState;
     });
   };
-
-  // const renderedCart =
-  //   cartKeys.length > 0 ? (
-  //     cartKeys.map((key, i) => {
-  //       return (
-  //         <CartItem
-  //           key={i}
-  //           name={cartState[key].name}
-  //           quantity={cartState[key].quantity}
-  //           price={cartState[key].price}
-  //           setCartState={setCartState}
-  //           removeItem={removeItem}
-  //         />
-  //       );
-  //     })
-  //   ) : (
-  //     <>
-  //       <div className="container-empty-img">
-  //         <img
-  //           src={imgObj.illustrationEmptyCart}
-  //           alt="Cart is empty"
-  //           className="empty-img"
-  //         />
-  //       </div>
-  //       <p className="empty-cart-txt">Your added items will appear here</p>
-  //     </>
-  //   );
 
   return (
     <StyledCart>

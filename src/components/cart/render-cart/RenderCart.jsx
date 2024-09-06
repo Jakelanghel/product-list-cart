@@ -2,7 +2,9 @@ import CartItem from "../cart-item/CartItem";
 import { imgObj } from "../../../constant/images";
 import PropTypes from "prop-types";
 
-const RenderCart = (cartKeys, cartState, setCartState, removeItem) => {
+const RenderCart = (props) => {
+  const { cartKeys, cartState, setCartState, removeItem } = props;
+
   if (cartKeys.length > 0) {
     const cartItems = cartKeys.map((key, i) => {
       return (

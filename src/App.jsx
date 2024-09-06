@@ -5,7 +5,7 @@ import Cart from "./components/cart/Cart";
 
 function App() {
   const [cartState, setCartState] = useState({});
-  console.log(cartState);
+  // console.log(cartState);
 
   return (
     <>
