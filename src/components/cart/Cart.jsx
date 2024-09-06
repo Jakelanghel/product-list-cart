@@ -16,10 +16,15 @@ const Cart = (props) => {
     });
   };
 
+  let totalItem = 0;
+  for (let key in cartState) {
+    totalItem += cartState[key].quantity;
+  }
+
   return (
     <StyledCart>
       <h2>
-        Your Cart <span>({cartKeys.length})</span>
+        Your Cart <span>({totalItem})</span>
       </h2>
       <RenderCart
         cartKeys={cartKeys}

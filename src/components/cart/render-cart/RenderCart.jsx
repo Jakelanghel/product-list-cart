@@ -6,6 +6,11 @@ const RenderCart = (props) => {
   const { cartKeys, cartState, setCartState, removeItem } = props;
 
   if (cartKeys.length > 0) {
+    const total = Object.values(cartState).reduce((total, item) => {
+      return total + item.price * item.quantity;
+    }, 0);
+    console.log(Object.values(cartState));
+
     const cartItems = cartKeys.map((key, i) => {
       return (
         <CartItem
@@ -21,9 +26,11 @@ const RenderCart = (props) => {
     return (
       <div>
         {cartItems}
-        <p>total</p>
+        <p>
+          Order Total <span>{total}</span>
+        </p>
         <div className="container-carbon-msg">
-          <img src="" alt="" />
+          <img src={imgObj.iconCarbonNeutral} alt="" />
           <p>This is a carbon-neutral delivery</p>
         </div>
       </div>
