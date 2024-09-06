@@ -4,8 +4,17 @@ import { StyledCart } from "./Cart.Styled";
 import { imgObj } from "../../constant/images";
 
 const Cart = (props) => {
-  const { cartState } = props;
+  const { cartState, setCartState } = props;
   const cartKeys = Object.keys(cartState);
+  console.log(cartKeys.length);
+
+  const removeItem = (name) => {
+    setCartState((oldState) => {
+      let newState = { ...oldState };
+      delete newState[name];
+      return newState;
+    });
+  };
 
   const renderedCart =
     cartKeys.length > 0 ? (
@@ -16,6 +25,8 @@ const Cart = (props) => {
             name={cartState[key].name}
             quantity={cartState[key].quantity}
             price={cartState[key].price}
+            setCartState={setCartState}
+            removeItem={removeItem}
           />
         );
       })
@@ -44,6 +55,7 @@ const Cart = (props) => {
 
 Cart.propTypes = {
   cartState: PropTypes.object.isRequired,
+  setCartState: PropTypes.func.isRequired,
 };
 
 export default Cart;

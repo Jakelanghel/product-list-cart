@@ -32,7 +32,7 @@ export const StyledCartItem = styled.main`
     padding-left: 10px;
   }
 
-  .remove-item {
+  .remove-btn {
     padding: 5px 7px;
     display: flex;
     justify-content: center;
@@ -40,6 +40,10 @@ export const StyledCartItem = styled.main`
     border-radius: 50%;
     background-color: transparent;
     border: solid 1.5px var(--rose-500);
+  }
+
+  .remove-btn:hover {
+    cursor: pointer;
   }
 
   .remove-img {

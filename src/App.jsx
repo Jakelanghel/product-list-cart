@@ -11,7 +11,7 @@ function App() {
     <>
       <GlobalStyles />
       <Menu cartState={cartState} setCartState={setCartState} />
-      <Cart cartState={cartState} />
+      <Cart cartState={cartState} setCartState={setCartState} />
     </>
   );
 }
