@@ -23,16 +23,19 @@ const RenderCart = (props) => {
       );
     });
     return (
-      <div>
+      <div className="full-cart">
         {cartItems}
-        <p>
-          Order Total <span>${total.toFixed(2)}</span>
+        <p className="order-total-txt">
+          Order Total
+          <span className="order-total-dollar">${total.toFixed(2)}</span>
         </p>
-        <div className="container-carbon-msg">
-          <img src={imgObj.iconCarbonNeutral} alt="" />
-          <p>This is a carbon-neutral delivery</p>
+        <div className="container-carbon-neutral">
+          <img src={imgObj.iconCarbonNeutral} alt="" className="carbon-img" />
+          <p className="carbon-neutral-txt">
+            This is a carbon-neutral delivery
+          </p>
         </div>
-        <button>Confirm Order</button>
+        <button className="order-confirm-btn">Confirm Order</button>
       </div>
     );
   } else {

@@ -2,12 +2,14 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 
-
 @font-face {
-  font-family: 'redhat'; 
-  src: url('./assets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
+  font-family: 'redhat';
+  src: url('../assets/fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; /* Specifies the range of weights */
+  font-style: normal; /* Specify font-style if applicable */
+  font-display: swap; /* Optional: Improve loading performance */
 }
+
 
 
 

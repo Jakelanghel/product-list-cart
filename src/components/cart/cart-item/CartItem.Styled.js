@@ -4,9 +4,9 @@ export const StyledCartItem = styled.main`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 1.5rem;
   border-bottom: solid 1px var(--rose-100);
   padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
 
   .name {
     font-size: 1rem;
@@ -32,8 +32,14 @@ export const StyledCartItem = styled.main`
     padding-left: 10px;
   }
 
+  .remove-img {
+    width: 12px;
+    height: 12px;
+  }
+
   .remove-btn {
-    padding: 5px 7px;
+    width: 25px;
+    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,10 +50,5 @@ export const StyledCartItem = styled.main`
 
   .remove-btn:hover {
     cursor: pointer;
-  }
-
-  .remove-img {
-    width: 13px;
-    height: 13px;
   }
 `;
