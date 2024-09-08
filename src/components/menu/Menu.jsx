@@ -3,6 +3,7 @@ import Item from "../../components/item/Item";
 import useScreenSize from "../../hooks/useScreenSize";
 import { StyledMenu } from "./Menu.Styled";
 import PropTypes from "prop-types";
+import { imgObj } from "../../constant/images";
 
 const Menu = (props) => {
   const screenSize = useScreenSize();

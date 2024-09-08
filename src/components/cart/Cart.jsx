@@ -1,7 +1,5 @@
 import PropTypes from "prop-types";
-import CartItem from "./cart-item/CartItem";
 import { StyledCart } from "./Cart.Styled";
-import { imgObj } from "../../constant/images";
 import RenderCart from "./render-cart/RenderCart";
 
 const Cart = (props) => {

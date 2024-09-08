@@ -19,7 +19,15 @@ const Item = (props) => {
 
   const setActive = () => {
     setCartState((oldState) => {
-      return { ...oldState, [name]: { name: name, price: price, quantity: 1 } };
+      return {
+        ...oldState,
+        [name]: {
+          name: name,
+          price: price,
+          quantity: 1,
+          thumbnailImg: images.thumbnail,
+        },
+      };
     });
   };
 

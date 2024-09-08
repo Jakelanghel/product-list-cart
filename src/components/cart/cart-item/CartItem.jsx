@@ -3,11 +3,18 @@ import PropTypes from "prop-types";
 import { imgObj } from "../../../constant/images";
 
 const CartItem = (props) => {
-  const { name, quantity, price, removeItem } = props;
+  const { name, quantity, price, removeItem, thumbnailImg, orderConfirmed } =
+    props;
   const total = price * quantity;
+  const renderThumbnail = orderConfirmed ? (
+    <div className="container-thumbnail">
+      <img src={thumbnailImg} alt="" />
+    </div>
+  ) : null;
 
   return (
     <StyledCartItem>
+      {renderThumbnail}
       <p className="name">{name}</p>
       <div className="details">
         <p className="price">
@@ -29,7 +36,9 @@ CartItem.propTypes = {
   name: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
-  removeItem: PropTypes.func.isRequired,
+  removeItem: PropTypes.func,
+  thumbnailImg: PropTypes.string,
+  orderConfirmed: PropTypes.bool,
 };
 
 export default CartItem;
