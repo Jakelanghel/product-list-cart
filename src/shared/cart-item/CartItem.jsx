@@ -1,16 +1,28 @@
 import { StyledCartItem } from "./CartItem.Styled";
 import PropTypes from "prop-types";
-import { imgObj } from "../../../constant/images";
+import { imgObj } from "../../constant/images";
 
 const CartItem = (props) => {
-  const { name, quantity, price, removeItem, thumbnailImg, orderConfirmed } =
+  const { name, quantity, price, removeItem, thumbnail, orderConfirmed } =
     props;
+
   const total = price * quantity;
+
   const renderThumbnail = orderConfirmed ? (
     <div className="container-thumbnail">
-      <img src={thumbnailImg} alt="" />
+      <img src={imgObj[thumbnail]} alt="thumbnail" />
     </div>
   ) : null;
+
+  const renderRemoveBtn = orderConfirmed ? null : (
+    <button className="remove-btn" onClick={() => removeItem(name)}>
+      <img
+        src={imgObj.iconRemoveItem}
+        alt="Remove item"
+        className="remove-img"
+      />
+    </button>
+  );
 
   return (
     <StyledCartItem>
@@ -21,13 +33,7 @@ const CartItem = (props) => {
           <span className="quantity">{quantity}x</span> @ ${price.toFixed(2)}
           <span className="total">${total.toFixed(2)}</span>
         </p>
-        <button className="remove-btn" onClick={() => removeItem(name)}>
-          <img
-            src={imgObj.iconRemoveItem}
-            alt="Remove item"
-            className="remove-img"
-          />
-        </button>
+        {renderRemoveBtn}
       </div>
     </StyledCartItem>
   );
@@ -37,7 +43,7 @@ CartItem.propTypes = {
   quantity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
   removeItem: PropTypes.func,
-  thumbnailImg: PropTypes.string,
+  thumbnail: PropTypes.string,
   orderConfirmed: PropTypes.bool,
 };
 

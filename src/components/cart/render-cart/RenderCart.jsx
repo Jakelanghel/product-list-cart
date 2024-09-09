@@ -1,6 +1,7 @@
-import CartItem from "../cart-item/CartItem";
+import CartItem from "../../../shared/cart-item/CartItem";
 import { imgObj } from "../../../constant/images";
 import PropTypes from "prop-types";
+import { StyledButton } from "../../../shared/btn/Button.Styled";
 
 const RenderCart = (props) => {
   const { cartKeys, cartState, setCartState, removeItem, confirmOrder } = props;
@@ -35,9 +36,7 @@ const RenderCart = (props) => {
             This is a carbon-neutral delivery
           </p>
         </div>
-        <button className="order-confirm-btn" onClick={confirmOrder}>
-          Confirm Order
-        </button>
+        <StyledButton onClick={confirmOrder}>Confirm Order</StyledButton>
       </div>
     );
   } else {

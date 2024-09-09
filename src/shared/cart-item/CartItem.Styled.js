@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const StyledCartItem = styled.main`
   width: 100%;
-  display: flex;
-  flex-direction: column;
   border-bottom: solid 1px var(--rose-100);
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
@@ -50,5 +48,13 @@ export const StyledCartItem = styled.main`
 
   .remove-btn:hover {
     cursor: pointer;
+  }
+
+  .container-thumbnail {
+    width: 15px;
+  }
+
+  .thumbnail-img {
+    width: 100%;
   }
 `;

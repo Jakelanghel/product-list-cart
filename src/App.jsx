@@ -9,7 +9,11 @@ function App() {
   const [orderConfirmed, setOrderConfirmed] = useState(false);
 
   const renderedConfirmation = orderConfirmed ? (
-    <OrderConfirmation cartState={cartState} setCartState={setCartState} />
+    <OrderConfirmation
+      cartState={cartState}
+      setCartState={setCartState}
+      orderConfirmed={orderConfirmed}
+    />
   ) : null;
 
   useEffect(() => {
@@ -33,8 +37,7 @@ function App() {
         setCartState={setCartState}
         setOrderConfirmed={setOrderConfirmed}
       />
-      {/* {renderedConfirmation} */}
-      <OrderConfirmation cartState={cartState} setCartState={setCartState} />
+      {renderedConfirmation}
     </>
   );
 }

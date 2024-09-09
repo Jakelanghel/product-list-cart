@@ -1,11 +1,11 @@
 import { imgObj } from "../../constant/images";
 import PropTypes from "prop-types";
-import CartItem from "../cart/cart-item/CartItem";
+import CartItem from "../../shared/cart-item/CartItem";
 import { StyledOrderConfirmation } from "./OrderConfirmation.Styled";
 import { StyledBackDrop } from "../back-drop/BackDrop.Styled";
-
+import { StyledButton } from "../../shared/btn/Button.Styled";
 const OrderConfirmation = (props) => {
-  const { cartState, setCartState } = props;
+  const { cartState, setCartState, orderConfirmed } = props;
 
   const cartKeys = Object.keys(cartState);
   const renderedOrderedItems = cartKeys.map((key, i) => (
@@ -14,7 +14,8 @@ const OrderConfirmation = (props) => {
       name={cartState[key].name}
       quantity={cartState[key].quantity}
       price={cartState[key].price}
-      thumbnail={cartState[key].thumbnail}
+      thumbnail={cartState[key].thumbnailImg}
+      orderConfirmed={orderConfirmed}
     />
   ));
 
@@ -22,12 +23,12 @@ const OrderConfirmation = (props) => {
     <StyledBackDrop>
       <StyledOrderConfirmation>
         <div className="container-header">
-          <img src={imgObj.OrderConfirmation} alt="" />
           <h3>Order Confirmed</h3>
           <p>We hope you enjoy your food!</p>
         </div>
 
         <div className="container-receipt">{renderedOrderedItems}</div>
+        <StyledButton>Start New Order</StyledButton>
       </StyledOrderConfirmation>
     </StyledBackDrop>
   );
@@ -36,6 +37,7 @@ const OrderConfirmation = (props) => {
 OrderConfirmation.propTypes = {
   cartState: PropTypes.object.isRequired,
   setCartState: PropTypes.func.isRequired,
+  orderConfirmed: PropTypes.bool.isRequired,
 };
 
 export default OrderConfirmation;
