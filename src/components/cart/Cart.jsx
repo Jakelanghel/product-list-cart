@@ -3,7 +3,7 @@ import { StyledCart } from "./Cart.Styled";
 import RenderCart from "./render-cart/RenderCart";
 
 const Cart = (props) => {
-  const { cartState, setCartState } = props;
+  const { cartState, setCartState, setOrderConfirmed } = props;
   const cartKeys = Object.keys(cartState);
 
   const removeItem = (name) => {
@@ -12,6 +12,10 @@ const Cart = (props) => {
       delete newState[name];
       return newState;
     });
+  };
+
+  const confirmOrder = () => {
+    setOrderConfirmed((oldState) => !oldState);
   };
 
   let totalItem = 0;
@@ -29,6 +33,7 @@ const Cart = (props) => {
         cartState={cartState}
         setCartState={setCartState}
         removeItem={removeItem}
+        confirmOrder={confirmOrder}
       />
     </StyledCart>
   );
@@ -37,6 +42,7 @@ const Cart = (props) => {
 Cart.propTypes = {
   cartState: PropTypes.object.isRequired,
   setCartState: PropTypes.func.isRequired,
+  setOrderConfirmed: PropTypes.func,
 };
 
 export default Cart;

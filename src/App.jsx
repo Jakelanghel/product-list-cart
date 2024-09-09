@@ -1,6 +1,6 @@
 import { GlobalStyles } from "./shared/Global";
 import Menu from "./components/menu/Menu";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Cart from "./components/cart/Cart";
 import OrderConfirmation from "./components/order-confirmation/OrderConfirmation";
 
@@ -12,6 +12,18 @@ function App() {
     <OrderConfirmation cartState={cartState} setCartState={setCartState} />
   ) : null;
 
+  useEffect(() => {
+    if (orderConfirmed) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [orderConfirmed]);
+
   return (
     <>
       <GlobalStyles />
@@ -20,9 +32,9 @@ function App() {
         cartState={cartState}
         setCartState={setCartState}
         setOrderConfirmed={setOrderConfirmed}
-        orderConfirmed={orderConfirmed}
       />
-      {renderedConfirmation}
+      {/* {renderedConfirmation} */}
+      <OrderConfirmation cartState={cartState} setCartState={setCartState} />
     </>
   );
 }

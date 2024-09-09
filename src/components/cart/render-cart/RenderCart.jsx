@@ -3,7 +3,7 @@ import { imgObj } from "../../../constant/images";
 import PropTypes from "prop-types";
 
 const RenderCart = (props) => {
-  const { cartKeys, cartState, setCartState, removeItem } = props;
+  const { cartKeys, cartState, setCartState, removeItem, confirmOrder } = props;
 
   if (cartKeys.length > 0) {
     const total = Object.values(cartState).reduce((total, item) => {
@@ -35,7 +35,9 @@ const RenderCart = (props) => {
             This is a carbon-neutral delivery
           </p>
         </div>
-        <button className="order-confirm-btn">Confirm Order</button>
+        <button className="order-confirm-btn" onClick={confirmOrder}>
+          Confirm Order
+        </button>
       </div>
     );
   } else {
@@ -59,6 +61,7 @@ RenderCart.propTypes = {
   cartState: PropTypes.object.isRequired,
   setCartState: PropTypes.func.isRequired,
   removeItem: PropTypes.func.isRequired,
+  confirmOrder: PropTypes.func.isRequired,
 };
 
 export default RenderCart;
