@@ -22,9 +22,10 @@ const OrderConfirmation = (props) => {
   return (
     <StyledBackDrop>
       <StyledOrderConfirmation>
+        <img src={imgObj.iconOrderConfirmed} alt="" className="confirm-icon" />
         <div className="container-header">
           <h3>Order Confirmed</h3>
-          <p>We hope you enjoy your food!</p>
+          <p className="msg">We hope you enjoy your food!</p>
         </div>
 
         <div className="container-receipt">{renderedOrderedItems}</div>

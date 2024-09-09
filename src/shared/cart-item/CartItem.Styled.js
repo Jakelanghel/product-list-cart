@@ -50,11 +50,27 @@ export const StyledCartItem = styled.main`
     cursor: pointer;
   }
 
+  .container-flex-r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--rose-50);
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    border-radius: 5px;
+  }
+
+  .container-flex-c {
+    margin-right: 3rem;
+  }
+
   .container-thumbnail {
-    width: 15px;
+    width: 75px;
   }
 
   .thumbnail-img {
     width: 100%;
+    border-radius: 3px;
   }
 `;
