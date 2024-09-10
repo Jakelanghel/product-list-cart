@@ -9,6 +9,7 @@ export const StyledCartItem = styled.div`
   .name {
     font-size: 1rem;
     font-weight: 600;
+    margin-bottom: 10px;
   }
 
   .details {
@@ -16,13 +17,20 @@ export const StyledCartItem = styled.div`
     justify-content: space-between;
   }
 
+  .price,
+  .quantity {
+    font-size: 0.85rem;
+  }
+
   .price {
+    font-size: 1rem;
     margin-top: 0.75rem;
     color: #9d9593;
   }
 
   .quantity {
     color: var(--red);
+    margin-right: 10px;
   }
 
   .total {
@@ -52,20 +60,18 @@ export const StyledCartItem = styled.div`
 
   .container-flex-r {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
     padding-bottom: 1.5rem;
     padding-top: 1.5rem;
+    padding: 1.5rem;
     border-radius: 5px;
   }
 
-  .container-flex-c {
-    margin-right: 3rem;
-  }
-
   .container-thumbnail {
-    width: 75px;
+    min-width: 75px;
+    max-width: 75px;
   }
 
   .thumbnail-img {

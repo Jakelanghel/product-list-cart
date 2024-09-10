@@ -56,7 +56,7 @@ OrderConfirmation.propTypes = {
   cartState: PropTypes.object.isRequired,
   setCartState: PropTypes.func.isRequired,
   orderConfirmed: PropTypes.bool.isRequired,
-  setOrderConfirmed: PropTypes.function.isRequired,
+  setOrderConfirmed: PropTypes.func.isRequired,
 };
 
 export default OrderConfirmation;
