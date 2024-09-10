@@ -43,7 +43,7 @@ export const StyledItem = styled.main`
   .cart-btn-active {
     width: 60%;
     position: absolute;
-    bottom: -20px;
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -61,6 +61,7 @@ export const StyledItem = styled.main`
     background-color: var(--rose-50);
     border: solid 1px black;
     justify-content: center;
+    padding: 1rem;
   }
 
   .cart-btn-active {

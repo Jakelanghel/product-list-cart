@@ -13,6 +13,7 @@ function App() {
       cartState={cartState}
       setCartState={setCartState}
       orderConfirmed={orderConfirmed}
+      setOrderConfirmed={setOrderConfirmed}
     />
   ) : null;
 

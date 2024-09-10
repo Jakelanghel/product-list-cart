@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledCartItem = styled.main`
+export const StyledCartItem = styled.div`
   width: 100%;
   border-bottom: solid 1px var(--rose-100);
   padding-bottom: 1.5rem;
@@ -55,7 +55,6 @@ export const StyledCartItem = styled.main`
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    background-color: var(--rose-50);
     padding-bottom: 1.5rem;
     padding-top: 1.5rem;
     border-radius: 5px;

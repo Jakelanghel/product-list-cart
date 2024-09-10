@@ -2,15 +2,13 @@ import CartItem from "../../../shared/cart-item/CartItem";
 import { imgObj } from "../../../constant/images";
 import PropTypes from "prop-types";
 import { StyledButton } from "../../../shared/btn/Button.Styled";
+import { getCartTotal } from "../../util/getCartTotal";
 
 const RenderCart = (props) => {
   const { cartKeys, cartState, setCartState, removeItem, confirmOrder } = props;
+  const cartTotal = getCartTotal(cartState);
 
   if (cartKeys.length > 0) {
-    const total = Object.values(cartState).reduce((total, item) => {
-      return total + item.price * item.quantity;
-    }, 0);
-
     const cartItems = cartKeys.map((key, i) => {
       return (
         <CartItem
@@ -28,7 +26,7 @@ const RenderCart = (props) => {
         {cartItems}
         <p className="order-total-txt">
           Order Total
-          <span className="order-total-dollar">${total.toFixed(2)}</span>
+          <span className="order-total-dollar">${cartTotal}</span>
         </p>
         <div className="container-carbon-neutral">
           <img src={imgObj.iconCarbonNeutral} alt="" className="carbon-img" />

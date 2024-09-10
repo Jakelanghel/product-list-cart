@@ -4,10 +4,18 @@ import CartItem from "../../shared/cart-item/CartItem";
 import { StyledOrderConfirmation } from "./OrderConfirmation.Styled";
 import { StyledBackDrop } from "../back-drop/BackDrop.Styled";
 import { StyledButton } from "../../shared/btn/Button.Styled";
-const OrderConfirmation = (props) => {
-  const { cartState, setCartState, orderConfirmed } = props;
+import { getCartTotal } from "../util/getCartTotal";
 
+const OrderConfirmation = (props) => {
+  const { cartState, setCartState, orderConfirmed, setOrderConfirmed } = props;
   const cartKeys = Object.keys(cartState);
+  const cartTotal = getCartTotal(cartState);
+
+  const resetOrder = () => {
+    setCartState({});
+    setOrderConfirmed(false);
+  };
+
   const renderedOrderedItems = cartKeys.map((key, i) => (
     <CartItem
       key={i}
@@ -28,8 +36,17 @@ const OrderConfirmation = (props) => {
           <p className="msg">We hope you enjoy your food!</p>
         </div>
 
-        <div className="container-receipt">{renderedOrderedItems}</div>
-        <StyledButton>Start New Order</StyledButton>
+        <div className="container-receipt">
+          {renderedOrderedItems}
+          <div className="container-total">
+            <p className="total-txt">Order Total</p>
+            <p className="total-dol">${cartTotal}</p>
+          </div>
+        </div>
+
+        <div className="container-btn">
+          <StyledButton onClick={resetOrder}>Start New Order</StyledButton>
+        </div>
       </StyledOrderConfirmation>
     </StyledBackDrop>
   );
@@ -39,6 +56,7 @@ OrderConfirmation.propTypes = {
   cartState: PropTypes.object.isRequired,
   setCartState: PropTypes.func.isRequired,
   orderConfirmed: PropTypes.bool.isRequired,
+  setOrderConfirmed: PropTypes.function.isRequired,
 };
 
 export default OrderConfirmation;

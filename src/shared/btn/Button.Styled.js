@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const StyledButton = styled.button`
   width: 90%;
   background: var(--red);
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 50px;
   border: none;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 900;
   color: white;
 `;

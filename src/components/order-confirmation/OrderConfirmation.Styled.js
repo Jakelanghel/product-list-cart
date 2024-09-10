@@ -9,6 +9,8 @@ export const StyledOrderConfirmation = styled.div`
   background-color: white;
   padding: 3rem 2rem;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
 
   .confirm-icon {
     width: 55px;
@@ -23,5 +25,34 @@ export const StyledOrderConfirmation = styled.div`
 
   .msg {
     margin-bottom: 1rem;
+  }
+
+  .container-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .total-txt {
+    font-size: 1rem;
+  }
+
+  .total-dol {
+    font-size: 1.25rem;
+    font-weight: 900;
+  }
+
+  .container-receipt {
+    background-color: var(--rose-50);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+  }
+
+  .container-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
   }
 `;

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { StyledCart } from "./Cart.Styled";
 import RenderCart from "./render-cart/RenderCart";
+import { getCartTotal } from "../util/getCartTotal";
 
 const Cart = (props) => {
   const { cartState, setCartState, setOrderConfirmed } = props;
@@ -18,15 +19,15 @@ const Cart = (props) => {
     setOrderConfirmed((oldState) => !oldState);
   };
 
-  let totalItem = 0;
-  for (let key in cartState) {
-    totalItem += cartState[key].quantity;
-  }
+  const itemTotal = cartKeys.reduce(
+    (total, key) => total + cartState[key].quantity,
+    0
+  );
 
   return (
     <StyledCart>
       <h2>
-        Your Cart <span>({totalItem})</span>
+        Your Cart <span>{itemTotal}</span>
       </h2>
       <RenderCart
         cartKeys={cartKeys}
