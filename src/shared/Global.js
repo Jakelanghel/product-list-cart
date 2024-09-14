@@ -40,5 +40,13 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "red-hat", sans-serif;
     }
 
+    @media only screen and (min-width: 1024px) {
+        .container-app {
+            display: flex;
+            align-items: flex-start;
+        }
+
+    }
+
 
 `;

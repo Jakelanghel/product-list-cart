@@ -22,13 +22,16 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Menu cartState={cartState} setCartState={setCartState} />
-      <Cart
-        cartState={cartState}
-        setCartState={setCartState}
-        setOrderConfirmed={setOrderConfirmed}
-      />
-      {renderedConfirmation}
+
+      <div className="container-app">
+        <Menu cartState={cartState} setCartState={setCartState} />
+        <Cart
+          cartState={cartState}
+          setCartState={setCartState}
+          setOrderConfirmed={setOrderConfirmed}
+        />
+        {renderedConfirmation}
+      </div>
     </>
   );
 }

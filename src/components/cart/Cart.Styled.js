@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const StyledCart = styled.div`
   width: 90%;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  max-width: 500px;
   margin: 3rem auto;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   background-color: #ffffff;
   padding: 2rem;
 
@@ -74,5 +75,9 @@ export const StyledCart = styled.div`
 
   .carbon-img {
     width: 30px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    border: solid 2px red;
   }
 `;

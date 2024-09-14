@@ -4,8 +4,9 @@ export const StyledItem = styled.main`
   width: 100%;
 
   .container-img {
-    max-width: 900%;
+    max-width: 450px;
     position: relative;
+    margin: 0 auto;
   }
 
   .menu-img {
@@ -88,5 +89,21 @@ export const StyledItem = styled.main`
   .quantity {
     font-size: 1rem;
     font-weight: 400;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .container-img {
+      max-width: 900%;
+      position: relative;
+    }
+
+    .menu-img {
+      max-width: 100%; /* Ensures the image doesn't exceed the width of its container */
+      height: auto; /* Maintains the aspect ratio */
+      display: block; /* Removes any extra space below the image */
+      border-radius: 10px;
+      margin: 2rem 0;
+      border: solid 3px transparent;
+    }
   }
 `;
