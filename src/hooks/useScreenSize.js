@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useScreenSize = () => {
+export const useScreenSize = () => {
   // Define breakpoints
   const breakpoints = {
     mobile: "(max-width: 767px)",
@@ -28,5 +28,3 @@ const useScreenSize = () => {
 
   return screenSize;
 };
-
-export default useScreenSize;

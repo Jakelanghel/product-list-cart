@@ -1,31 +1,25 @@
-import data from "./data/data.json";
-import Item from "../../components/item/Item";
-import useScreenSize from "../../hooks/useScreenSize";
-import { StyledMenu } from "./Menu.Styled";
 import PropTypes from "prop-types";
-import { imgObj } from "../../constant/images";
+import data from "./data/data.json";
+
+import { useScreenSize } from "../../hooks/useScreenSize";
+import { StyledMenu } from "./Menu.Styled";
+import renderMenuItems from "./data/renderMenuItems";
 
 const Menu = (props) => {
   const screenSize = useScreenSize();
   const { cartState, setCartState } = props;
 
-  const MenuItems = data.map((item, i) => (
-    <Item
-      key={i}
-      name={item.name}
-      images={item.image}
-      category={item.category}
-      price={item.price}
-      screenSize={screenSize}
-      cartState={cartState}
-      setCartState={setCartState}
-    />
-  ));
+  const renderedMenuItems = renderMenuItems(
+    data,
+    cartState,
+    screenSize,
+    setCartState
+  );
 
   return (
     <StyledMenu>
       <h1>Desserts</h1>
-      {MenuItems}
+      {renderedMenuItems}
     </StyledMenu>
   );
 };
