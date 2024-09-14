@@ -1,8 +1,10 @@
-import { GlobalStyles } from "./shared/Global";
 import Menu from "./components/menu/Menu";
-import { useState, useEffect } from "react";
 import Cart from "./components/cart/Cart";
 import OrderConfirmation from "./components/order-confirmation/OrderConfirmation";
+
+import { useState, useEffect } from "react";
+import { GlobalStyles } from "./shared/Global";
+import { useOverflow } from "./hooks/useOverflow";
 
 function App() {
   const [cartState, setCartState] = useState({});
@@ -17,17 +19,7 @@ function App() {
     />
   ) : null;
 
-  useEffect(() => {
-    if (orderConfirmed) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [orderConfirmed]);
+  useOverflow(orderConfirmed);
 
   return (
     <>

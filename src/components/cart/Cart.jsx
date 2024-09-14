@@ -27,7 +27,7 @@ const Cart = (props) => {
   return (
     <StyledCart>
       <h2>
-        Your Cart <span>{itemTotal}</span>
+        Your Cart <span>({itemTotal})</span>
       </h2>
       <RenderCart
         cartKeys={cartKeys}
