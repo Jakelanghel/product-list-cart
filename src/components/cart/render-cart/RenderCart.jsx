@@ -2,7 +2,7 @@ import CartItem from "../../../shared/cart-item/CartItem";
 import { imgObj } from "../../../constant/images";
 import PropTypes from "prop-types";
 import { StyledButton } from "../../../shared/btn/Button.Styled";
-import { getCartTotal } from "../../util/getCartTotal";
+import { getCartTotal } from "../../../util/getCartTotal";
 
 const RenderCart = (props) => {
   const { cartKeys, cartState, setCartState, removeItem, confirmOrder } = props;

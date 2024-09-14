@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { StyledCart } from "./Cart.Styled";
 import RenderCart from "./render-cart/RenderCart";
-import { getCartTotal } from "../util/getCartTotal";
+import { getCartTotal } from "../../util/getCartTotal";
 
 const Cart = (props) => {
   const { cartState, setCartState, setOrderConfirmed } = props;

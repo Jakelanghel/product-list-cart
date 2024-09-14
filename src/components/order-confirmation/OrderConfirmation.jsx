@@ -4,7 +4,7 @@ import CartItem from "../../shared/cart-item/CartItem";
 import { StyledOrderConfirmation } from "./OrderConfirmation.Styled";
 import { StyledBackDrop } from "../back-drop/BackDrop.Styled";
 import { StyledButton } from "../../shared/btn/Button.Styled";
-import { getCartTotal } from "../util/getCartTotal";
+import { getCartTotal } from "../../util/getCartTotal";
 
 const OrderConfirmation = (props) => {
   const { cartState, setCartState, orderConfirmed, setOrderConfirmed } = props;

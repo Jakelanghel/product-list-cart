@@ -1,23 +1,21 @@
 import Menu from "./components/menu/Menu";
 import Cart from "./components/cart/Cart";
-import OrderConfirmation from "./components/order-confirmation/OrderConfirmation";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { GlobalStyles } from "./shared/Global";
 import { useOverflow } from "./hooks/useOverflow";
+import { renderConfirmation } from "./util/renderConfirmation";
 
 function App() {
   const [cartState, setCartState] = useState({});
   const [orderConfirmed, setOrderConfirmed] = useState(false);
 
-  const renderedConfirmation = orderConfirmed ? (
-    <OrderConfirmation
-      cartState={cartState}
-      setCartState={setCartState}
-      orderConfirmed={orderConfirmed}
-      setOrderConfirmed={setOrderConfirmed}
-    />
-  ) : null;
+  const renderedConfirmation = renderConfirmation(
+    orderConfirmed,
+    cartState,
+    setCartState,
+    setOrderConfirmed
+  );
 
   useOverflow(orderConfirmed);
 
