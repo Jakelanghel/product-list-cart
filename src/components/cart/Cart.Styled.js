@@ -78,6 +78,7 @@ export const StyledCart = styled.div`
   }
 
   @media only screen and (min-width: 1024px) {
-    border: solid 2px red;
+    width: 50%;
+    min-width: 350px;
   }
 `;

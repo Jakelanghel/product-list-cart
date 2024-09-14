@@ -17,10 +17,11 @@ const Menu = (props) => {
   );
 
   return (
-    <StyledMenu>
+    <div>
       <h1>Desserts</h1>
-      {renderedMenuItems}
-    </StyledMenu>
+
+      <StyledMenu>{renderedMenuItems}</StyledMenu>
+    </div>
   );
 };
 

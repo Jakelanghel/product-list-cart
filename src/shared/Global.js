@@ -40,10 +40,22 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "red-hat", sans-serif;
     }
 
+    .container-app {
+        max-width: 500px;
+        margin: 0 auto;
+        padding:  1.5rem;
+
+    }
+
     @media only screen and (min-width: 1024px) {
         .container-app {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             align-items: flex-start;
+            padding: 3rem 1.5rem;
+
+
         }
 
     }

@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const StyledItem = styled.main`
-  width: 100%;
-
+export const StyledItem = styled.div`
   .container-img {
     max-width: 450px;
     position: relative;
@@ -93,17 +91,25 @@ export const StyledItem = styled.main`
 
   @media only screen and (min-width: 1024px) {
     .container-img {
-      max-width: 900%;
-      position: relative;
+      max-width: 200px;
     }
 
-    .menu-img {
-      max-width: 100%; /* Ensures the image doesn't exceed the width of its container */
-      height: auto; /* Maintains the aspect ratio */
-      display: block; /* Removes any extra space below the image */
-      border-radius: 10px;
-      margin: 2rem 0;
-      border: solid 3px transparent;
+    .category,
+    .name,
+    .price {
+      font-size: 0.8rem;
+    }
+
+    .cart-btn {
+      padding: 0.5rem;
+    }
+
+    .cart-btn,
+    .cart-btn-active {
+      width: 75%;
+      bottom: -15px;
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
     }
   }
 `;
